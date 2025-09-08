@@ -1,20 +1,27 @@
 package com.application.ecommercecrud.controllers;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.application.ecommercecrud.services.IProductService;
+
 import org.springframework.web.bind.annotation.GetMapping;
 
 @RestController
 @RequestMapping("/api/products")
 public class ProductController {
 
+    IProductService productService;
+
+    public ProductController(IProductService productService) {
+        this.productService = productService;
+    }
+
     @GetMapping("all")
     public List<String> getAllProducts() {
-        return new ArrayList<>(Arrays.asList("Product1", "Product2", "Product3"));
+        return this.productService.getAllProducts();
     }
 
 }
