@@ -4,12 +4,20 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.application.ecommercecrud.Gateway.IProductgateway;
+
 @Service
 public class FakeStoreProductService implements IProductService {
 
+    IProductgateway productgateway;
+
+    public FakeStoreProductService(IProductgateway productgateway) {
+        this.productgateway = productgateway;
+    }
+
     @Override
     public List<String> getAllProducts() {
-        return List.of("FakeProduct0", "FakeProduct1", "FakeProduct2");
+        return this.productgateway.getAllProducts();
     }
 
 }
