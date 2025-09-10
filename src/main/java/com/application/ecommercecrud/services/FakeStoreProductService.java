@@ -1,10 +1,12 @@
 package com.application.ecommercecrud.services;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
 import com.application.ecommercecrud.Gateway.IProductgateway;
+import com.application.ecommercecrud.dto.ProductsDTO;
 
 @Service
 public class FakeStoreProductService implements IProductService {
@@ -16,7 +18,7 @@ public class FakeStoreProductService implements IProductService {
     }
 
     @Override
-    public List<String> getAllProducts() {
+    public List<ProductsDTO> getAllProducts() throws IOException {
         return this.productgateway.getAllProducts();
     }
 
