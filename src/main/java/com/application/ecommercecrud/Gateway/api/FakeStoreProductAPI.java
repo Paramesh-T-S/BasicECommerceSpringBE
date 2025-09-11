@@ -3,6 +3,7 @@ package com.application.ecommercecrud.Gateway.api;
 import java.io.IOException;
 import java.util.List;
 
+import com.application.ecommercecrud.dto.FakeStoreCartsResponseDTO;
 import com.application.ecommercecrud.dto.FakeStoreProductsResponseDTO;
 
 import retrofit2.Call;
@@ -12,5 +13,8 @@ public interface FakeStoreProductAPI {
 
     @GET("products")
     Call<List<FakeStoreProductsResponseDTO>> getAllFakeCategories() throws IOException;
+
+    @GET("carts")
+    Call<List<FakeStoreCartsResponseDTO>> getAllCarts() throws IOException;
 
 }

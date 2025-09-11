@@ -8,5 +8,4 @@ import com.application.ecommercecrud.dto.ProductsDTO;
 public interface IProductgateway {
 
     List<ProductsDTO> getAllProducts() throws IOException;
-
 }
