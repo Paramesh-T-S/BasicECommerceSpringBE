@@ -8,12 +8,12 @@ import org.springframework.stereotype.Service;
 import com.application.ecommercecrud.Gateway.IProductgateway;
 import com.application.ecommercecrud.dto.ProductsDTO;
 
-@Service("FakeStoreProductService")
-public class FakeStoreProductService implements IProductService {
+@Service("FakeStoreProductService1")
+public class FakeStoreProductService1 implements IProductService {
 
     IProductgateway productgateway;
 
-    public FakeStoreProductService(IProductgateway productgateway) {
+    public FakeStoreProductService1(IProductgateway productgateway) {
         this.productgateway = productgateway;
     }
 

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.application.ecommercecrud.dto.ProductsDTO;
 import com.application.ecommercecrud.services.IProductService;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @RestController
@@ -17,7 +18,7 @@ public class ProductController {
 
     IProductService productService;
 
-    public ProductController(IProductService productService) {
+    public ProductController(@Qualifier("FakeStoreProductService1") IProductService productService) {
         this.productService = productService;
     }
 
